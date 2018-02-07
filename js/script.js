@@ -14,10 +14,16 @@ $(document).ready(function(){
   $('#sljed').on('click',iduca);
   $('#pred').on('click', prethodna);
 
-  if(auto_okret == true){
-    setInterval(iduca, auto_brzina);
-  }
+  setInterval(provjeraAuto, auto_brzina);
+
 });
+
+function provjeraAuto(){
+  if($('#slideThree').is(':checked')){
+    iduca();
+  }
+
+}
 
 function iduca(){
   $('.active').removeClass('active').addClass('oldActive');
